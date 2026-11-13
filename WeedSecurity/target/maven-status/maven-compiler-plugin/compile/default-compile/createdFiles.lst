@@ -1,0 +1,6 @@
+dev\weedsecurity\db\SecurityDatabase.class
+dev\weedsecurity\command\PinCommand.class
+dev\weedsecurity\security\PinService.class
+dev\weedsecurity\security\SecurityListener.class
+dev\weedsecurity\command\SecurityCommand.class
+dev\weedsecurity\WeedSecurity.class

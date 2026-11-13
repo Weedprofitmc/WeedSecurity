@@ -1,0 +1,20 @@
+messages:
+  prefix: "&8[&dWEEDSECURITY&8] &7"
+  denied: "&cВ доступе отказано."
+security:
+  pin-enabled: true
+  pin-length-min: 4
+  pin-length-max: 12
+  trusted-ip-hours: 24
+  max-attempts: 5
+  lock-minutes: 15
+  # Generate a random secret of 32+ characters before production.
+  # Used only to hash IP addresses before they are persisted in SQLite.
+  ip-hash-secret: "CHANGE-ME-TO-A-RANDOM-SECRET-AT-LEAST-32-CHARS"
+database:
+  type: SQLITE
+  file: "data/security.db"
+audit:
+  enabled: true
+  log-pin-attempts: true
+  log-permission-changes: true

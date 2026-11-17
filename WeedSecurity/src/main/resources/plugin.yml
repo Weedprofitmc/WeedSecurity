@@ -1,19 +1,20 @@
 name: WeedSecurity
-version: 1.1.0
+version: 1.4.1
 main: dev.weedsecurity.WeedSecurity
 api-version: '1.21'
 author: Weed
-description: Security, PIN authentication, audit logging and LuckPerms administration
-depend: [WeedLib]
-softdepend: [LuckPerms]
+description: PIN authentication, operator allowlist, administration panels and audit history
+depend: [WeedCore, WeedLib]
+softdepend: [LuckPerms, PlaceholderAPI, Vault]
 commands:
   weedsecurity:
-    description: Operator-only WeedSecurity administration
-    usage: /weedsecurity permission <add|remove> <player> <group>
+    description: WeedSecurity administration
+    usage: /weedsecurity <panel|playerlist|repass|giveop|permission|info>
     aliases: [ws]
   pincode:
     description: WeedSecurity PIN authentication
     usage: /pincode set <PIN> | /pincode <PIN>
+
 permissions:
   weedsecurity.admin:
     default: op

@@ -9,12 +9,12 @@ security:
   max-attempts: 5
   lock-minutes: 15
   # Generate a random secret of 32+ characters before production.
-  # Used only to hash IP addresses before they are persisted in SQLite.
   ip-hash-secret: "CHANGE-ME-TO-A-RANDOM-SECRET-AT-LEAST-32-CHARS"
-database:
-  type: SQLITE
-  file: "data/security.db"
-audit:
-  enabled: true
-  log-pin-attempts: true
-  log-permission-changes: true
+  # Only these exact Minecraft usernames may receive operator status.
+  op-allowlist:
+    - "ReplaceWithYourAdminNickname"
+  op-ban-message: "Попробуй еще раз)"
+panel:
+  title: "§8WeedSecurity §7| §dПлагины"
+  playerlist-title: "§8WeedSecurity §7| §dИгроки"
+  activity-title: "§8Действия §7| §d{player}"

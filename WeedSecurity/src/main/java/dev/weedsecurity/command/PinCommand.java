@@ -1,5 +1,7 @@
 package dev.weedsecurity.command;
 
+import dev.weedlib.text.Text;
+
 import dev.weedsecurity.WeedSecurity;
 import dev.weedsecurity.db.SecurityDatabase;
 import dev.weedsecurity.security.PinService;
@@ -8,7 +10,7 @@ import org.bukkit.entity.Player;
 import java.util.*;
 
 public final class PinCommand implements TabExecutor {
-    private static final String PREFIX="§8[§dWEEDSECURITY§8] §7";
+    private static final String PREFIX=Text.color("&8[&dWEEDSECURITY&8] &7");
     private final WeedSecurity plugin; private final PinService pins; private final SecurityDatabase db;
     public PinCommand(WeedSecurity plugin,PinService pins,SecurityDatabase db){this.plugin=plugin;this.pins=pins;this.db=db;}
 
@@ -16,7 +18,7 @@ public final class PinCommand implements TabExecutor {
         if(!(sender instanceof Player player)){sender.sendMessage(PREFIX+"§cЭта команда доступна только игроку.");return true;}
         UUID id=player.getUniqueId();
         if(args.length==2&&args[0].equalsIgnoreCase("set")){
-            if(pins.hasPin(id)){player.sendMessage(PREFIX+"§cPIN уже установлен. Попросите оператора сбросить его.");return true;}
+            if(pins.hasPin(id)){player.sendMessage(PREFIX+"§cPIN уже установлен. Попросите администратора сбросить его если вы его забыли.");return true;}
             if(!pins.setup(id,args[1])){player.sendMessage(PREFIX+"§cPIN должен содержать только цифры и иметь допустимую длину.");return true;}
             String ip=player.getAddress()==null?"":player.getAddress().getAddress().getHostAddress();
             pins.verify(id,args[1],ip);db.audit(id,id,"PIN_CREATED","Player created PIN");

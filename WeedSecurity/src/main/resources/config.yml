@@ -9,7 +9,7 @@ security:
   max-attempts: 5
   lock-minutes: 15
   # Generate a random secret of 32+ characters before production.
-  ip-hash-secret: "CHANGE-ME-TO-A-RANDOM-SECRET-AT-LEAST-32-CHARS"
+  ip-hash-secret: "k7#Pq2$Lm9@Vx4!Rt8&Wn3^Zc6*Hb1%Fd5"
   # Only these exact Minecraft usernames may receive operator status.
   op-allowlist:
     - "ReplaceWithYourAdminNickname"
